@@ -1,0 +1,129 @@
+# Config file to process Cascade l5 files
+# ## Writes out hdf5 file with given keys
+#
+# # Directory structure:
+# #       At prompt of create_job_files.py a data_folder
+# #       will be asked for in which the files are to be
+# #       saved
+# #
+# #   Files are then stored as:
+# #
+# #   data_folder:
+# #       processing:
+# #           out_dir_pattern:
+# #               jobs: (job files are stored here)
+# #               logs: (log files are stored here)
+# #
+# #       out_dir_pattern:
+# #
+# #               (if merge_files == True):
+# #               out_file_pattern+'.i3.bz2'
+# #               out_file_pattern+'.hdf5'
+# #
+# #               (if merge_files == False):
+# #               run_folder:
+# #                       out_file_pattern+'.i3.bz2'
+# #                       out_file_pattern+'.hdf5'
+# #
+# #
+# #
+# #               Where the run folder is given by:
+# #               run_folder = folder_pattern.format(folder_num = folder_offset + run_number//1000)
+# #
+# #       The following variables are available and can be used in input/output patterns
+# #       folder_num = folder_offset + run_number//1000
+# #       folder_num_pre_offset = run_number//1000
+# #
+#
+# #------------------------------
+# # General
+# #------------------------------
+job_template: job_templates/py3-v4.1.0.sh
+script_name: test_script.py
+python_user_base_cpu: /PATH/TO/YOUR/VENV
+python_user_base_gpu: /PATH/TO/YOUR/VENV_GPU
+keep_crashed_files: False
+write_i3: False
+write_hdf5: True
+
+resources:
+    # If gpus == 1 this will be run on a GPU with
+    gpus: 0
+    # Randomly crashes when run on a GPU if cpus > 1
+    cpus: 1
+    memory: 2gb
+    # Define a list of valid compute capabilites
+    # Possible values are [3.0, 3.5, 5.2, 6.1]
+    # 6.1 GeForce GTX 1080
+    # 5.2 GeForce GTX 980
+    # 3.0 GeForce GTX 680
+    # cuda_compute_capability: [3.0, 3.5, 5.2, 6.1]
+
+    # limit to sl6 nodes?
+    only_sl6: False
+
+dagman_max_jobs: 5000
+dagman_submits_interval: 500
+dagman_scan_interval: 1
+dagman_submit_delay: 0
+
+
+# True:  merge all files in an input run_folder directory
+#        and submit a single job for all files
+#        in that directory
+#        Note: The run_folders will be determined
+#              according to the run_range, folder_pattern
+#              and folder_offset
+# False: submit a job for every run in a run_folder
+merge_files: False
+
+#------------------------------
+# Define Datasets to process
+#------------------------------
+#
+#------
+# common settings shared by all datasets
+#------
+
+
+in_file_pattern: '/data/exp/IceCube/2012/filtered/level2/{folder_pattern}/{file_prefix}_{dataset_number}_Subrun{run_number:08d}.i3.bz2'
+out_file_pattern: '{file_prefix}_{dataset_number}_Subrun{run_number:08d}'
+out_dir_pattern: 'datasets/{dataset_number}/{step}'
+folder_offset: 0
+#------
+
+datasets:
+
+    custom_dataset_name:
+
+        cycler:
+            dataset_number: ['Run00120171']
+
+        folder_pattern: '0519'
+        file_prefix: 'Level2_IC86.2012_data'
+        gcd: '/data/exp/IceCube/2012/filtered/level2/0519/Level2_IC86.2012_data_Run00120171_0519_GCD.i3.gz'
+        step: 'test_step'
+
+        year: '2012'
+        runs_range: [123, 124]
+
+
+#------------------------------
+# Define Additional Features needed by the script
+#------------------------------
+
+feature_for_module: False
+
+
+#------------------------------
+# HDF writer specific options
+#------------------------------
+# sub event streams to write
+HDF_SubEventStreams: [
+    'InIceSplit',
+]
+# hdf keys to write if write_hdf5 == True
+HDF_keys: [
+    'I3EventHEader',
+]
+
