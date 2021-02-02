@@ -12,11 +12,13 @@ import histlite as hl
 
 names = source_list_loader()
 
-srcs = source_list_loader(names[2])
+name = names[1]
+
+srcs = source_list_loader(name)
 print(srcs)
-srcs_ra = [src["ra"] for src in srcs[names[2]]]
+srcs_ra = [src["ra"] for src in srcs[name]]
 print(srcs_ra)
-srcs_dec = [src["dec"] for src in srcs[names[2]]]
+srcs_dec = [src["dec"] for src in srcs[name]]
 print(srcs_dec)
 # convert sources to csky_style
 
@@ -26,14 +28,14 @@ print(src)
 
 # load bg
 
-cy.selections.DataSpec._version = 'version-003-p03'
+#cy.selections.DataSpec._version = 'version-003-p03'
 ana_dir = cy.utils.ensure_dir('/data/user/jkollek/csky_cache/ana/')
-ana11 = cy.get_analysis(cy.selections.repo, cy.selections.PSDataSpecs.ps_2011, dir=ana_dir)
+ana11 = cy.get_analysis(cy.selections.repo, 'version-003-p03', cy.selections.PSDataSpecs.ps_2011, dir=ana_dir)
 
 tr = cy.get_trial_runner(src=src, ana=ana11, sindec_bandwidth=np.radians(.1), mp_cpus=20)
 
 
-bg = cy.dists.Chi2TSD(tr.get_many_fits(100, seed=1))
+bg = cy.dists.Chi2TSD(tr.get_many_fits(1000, seed=1))
 
 print(bg)
 print(bg.description)
@@ -48,7 +50,7 @@ print(bg.description)
 
 fig, ax = plt.subplots()
 
-h = bg.get_hist(bins=30)
+h = bg.get_hist(bins=15)
 hl.plot1d(ax, h, crosses=True, label='{} bg trials'.format(bg.n_total))
 
 x = h.centers[0]
