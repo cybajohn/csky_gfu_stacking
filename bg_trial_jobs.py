@@ -77,7 +77,9 @@ job_args = {"seed": list(range(100, 100 + njobs)),
 
 exe = "/bin/bash"
 
+# at 1e4 trials per job, job uses ~5700MB ram for 6 years of data
+
 job_creator.create_job(job_exe=script, job_args=job_args,
-                       job_name=job_name, job_dir=job_dir, bash_exe=exe, overwrite=True)
+                       job_name=job_name, job_dir=job_dir, bash_exe=exe, ram="7GB", overwrite=True)
 
 
