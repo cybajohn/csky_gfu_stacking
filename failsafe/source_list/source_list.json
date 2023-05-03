@@ -1,0 +1,190 @@
+{
+  "IC79": [
+    {
+      "mjd": 55497.30331769125, 
+      "run_id": 116807, 
+      "event_id": 9493609, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2010_EHE_alert_1.i3_event0000.json.gz", 
+      "ra_map": 1.5477866149766117, 
+      "ra": 1.5484099765782686, 
+      "dec": 0.007849834881166173, 
+      "dec_map": 0.007812579475042547
+    }, 
+    {
+      "mjd": 55589.56278238702, 
+      "run_id": 117639, 
+      "event_id": 30571557, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2010_EHE_alert_2.i3_event0000.json.gz", 
+      "ra_map": 5.367398776811858, 
+      "ra": 5.3672444864229805, 
+      "dec": 0.020255799867416064, 
+      "dec_map": 0.02083484066864827
+    }, 
+    {
+      "mjd": 55624.954827935995, 
+      "run_id": 117846, 
+      "event_id": 48742309, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2010_EHE_alert_3.i3_event0000.json.gz", 
+      "ra_map": 2.0325245439484747, 
+      "ra": 2.0303854802417494, 
+      "dec": -0.18798849646264149, 
+      "dec_map": -0.18861638617540422
+    }
+  ], 
+  "IC86_2012-2014": [
+    {
+      "mjd": 56192.54932069605, 
+      "run_id": 120708, 
+      "event_id": 53550535, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2012_EHE_alert_1.i3_event0000.json.gz", 
+      "ra_map": 1.234854534247941, 
+      "ra": 1.235310933514211, 
+      "dec": 0.3450032635921617, 
+      "dec_map": 0.3453666147635075
+    }, 
+    {
+      "mjd": 56211.77094169458, 
+      "run_id": 120798, 
+      "event_id": 20915945, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2012_EHE_alert_2.i3_event0000.json.gz", 
+      "ra_map": 3.5818451397129722, 
+      "ra": 3.581814948891021, 
+      "dec": -0.04049388813253237, 
+      "dec_map": -0.041678732422578024
+    }, 
+    {
+      "mjd": 56542.793087597296, 
+      "run_id": 122973, 
+      "event_id": 6578595, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2013_EHE_alert_0.i3_event0000.json.gz", 
+      "ra_map": 2.265689623707092, 
+      "ra": 2.2655890575352204, 
+      "dec": -0.18113118402082162, 
+      "dec_map": -0.18066877153760608
+    }, 
+    {
+      "mjd": 56588.55849435321, 
+      "run_id": 123145, 
+      "event_id": 34573112, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2013_EHE_alert_1.i3_event0000.json.gz", 
+      "ra_map": 5.267690025599292, 
+      "ra": 5.268053729445555, 
+      "dec": 0.20102455879404865, 
+      "dec_map": 0.20056062564231714
+    }, 
+    {
+      "mjd": 56665.30788545393, 
+      "run_id": 123751, 
+      "event_id": 34239163, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2013_EHE_alert_3.i3_event0000.json.gz", 
+      "ra_map": 6.013204688511713, 
+      "ra": 6.01365603177178, 
+      "dec": 0.027219560116620127, 
+      "dec_map": 0.027347158545810935
+    }, 
+    {
+      "mjd": 56666.50297462721, 
+      "run_id": 123762, 
+      "event_id": 72626160, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2013_EHE_alert_4.i3_event0000.json.gz", 
+      "ra_map": 5.111223985234956, 
+      "ra": 5.111822305012733, 
+      "dec": 0.5765432098234455, 
+      "dec_map": 0.5770725824947164
+    }, 
+    {
+      "mjd": 56691.7851219513, 
+      "run_id": 124136, 
+      "event_id": 15174527, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2013_EHE_alert_5.i3_event0000.json.gz", 
+      "ra_map": 6.100641593421195, 
+      "ra": 6.1005667941278166, 
+      "dec": -0.23915065919370374, 
+      "dec_map": -0.2392552603453013
+    }, 
+    {
+      "mjd": 56819.204436954555, 
+      "run_id": 124861, 
+      "event_id": 32863663, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2014_EHE_alert_0.i3_event0000.json.gz", 
+      "ra_map": 1.926679869584365, 
+      "ra": 1.9254752876143275, 
+      "dec": 0.2010007658296437, 
+      "dec_map": 0.20056062564231714
+    }, 
+    {
+      "mjd": 56923.72109091236, 
+      "run_id": 125338, 
+      "event_id": 65606123, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2014_EHE_alert_1.i3_event0000.json.gz", 
+      "ra_map": 2.9621169014071733, 
+      "ra": 2.963147413875044, 
+      "dec": -0.023270268724319074, 
+      "dec_map": -0.02343964629780282
+    }
+  ], 
+  "IC86_2011": [
+    {
+      "mjd": 55834.44513646853, 
+      "run_id": 118741, 
+      "event_id": 43101116, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2011_EHE_alert_0.i3_event0000.json.gz", 
+      "ra_map": 4.65256372965715, 
+      "ra": 4.6510708374664596, 
+      "dec": -0.0769589916194264, 
+      "dec_map": -0.07820469193475432
+    }, 
+    {
+      "mjd": 55987.80691328732, 
+      "run_id": 119739, 
+      "event_id": 41603205, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2011_EHE_alert_1.i3_event0000.json.gz", 
+      "ra_map": 4.154019973594316, 
+      "ra": 4.1539104515602565, 
+      "dec": 0.3252967667219125, 
+      "dec_map": 0.32468516525988145
+    }
+  ], 
+  "IC86_2015": [
+    {
+      "mjd": 57265.21781542625, 
+      "run_id": 126798, 
+      "event_id": 67205547, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2015_EHE_alert_1.i3_event0000.json.gz", 
+      "ra_map": 0.9572040116406401, 
+      "ra": 0.9575515808268731, 
+      "dec": 0.5934889676387952, 
+      "dec_map": 0.5926894120101127
+    }, 
+    {
+      "mjd": 57288.0267907843, 
+      "run_id": 126878, 
+      "event_id": 30560694, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2015_EHE_alert_2.i3_event0000.json.gz", 
+      "ra_map": 1.8008934449777425, 
+      "ra": 1.8025184311781253, 
+      "dec": 0.0667282745162577, 
+      "dec_map": 0.0664551533763833
+    }, 
+    {
+      "mjd": 57348.531609580496, 
+      "run_id": 127154, 
+      "event_id": 9907321, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2015_EHE_alert_4.i3_event0000.json.gz", 
+      "ra_map": 4.572796728687097, 
+      "ra": 4.574895964651911, 
+      "dec": -0.04150483671743879, 
+      "dec_map": -0.041678732422578024
+    }, 
+    {
+      "mjd": 57518.66395275027, 
+      "run_id": 127910, 
+      "event_id": 25056152, 
+      "map_path": "/home/jkollek/punktquellensuche/ehe_transient_stacking_analysis/out_master/ehe_scan_maps_truncated/candidate_2015_EHE_alert_6.i3_event0000.json.gz", 
+      "ra_map": 6.155864901785077, 
+      "ra": 6.15638730318402, 
+      "dec": 0.036283807693475126, 
+      "dec_map": 0.036466414965548255
+    }
+  ]
+}

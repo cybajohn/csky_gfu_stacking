@@ -8,6 +8,7 @@ Create jobfiles for `07-bg_trials.py`.
 
 import os
 import numpy as np
+import csky as cy
 
 from dagman import dagman
 from _paths import PATHS
@@ -16,8 +17,35 @@ from _paths import PATHS
 job_creator = dagman.DAGManJobCreator()
 job_name = "csky_ehe_transient_stacking"
 
-job_dir = os.path.join(PATHS.jobs, "bg_trials")
+job_dir = os.path.join(PATHS.jobs, "bg_trials_new")
 script = ["~/venvs/py3v4/bin/python3", os.path.join(PATHS.repo, "bg_trial_for_jobs.py")]
+
+# cache ana
+print("cache ana")
+ana_dir = os.path.join(PATHS.data, "ana_cache", "bg")
+# maybe change that to csky methods
+if not os.path.isdir(ana_dir):
+    os.makedirs(ana_dir)
+
+cy.CONF['mp_cpus'] = 5
+
+remake = True
+
+if len(os.listdir(ana_dir)) == 0 or remake:
+        print("caching ana for later")
+        ana11 = cy.get_analysis(cy.selections.repo,
+                                            'version-004-p00', cy.selections.PSDataSpecs.my_cleaned_data,
+        )
+        """
+        ana11 = cy.get_analysis(cy.selections.repo,
+                                            'version-003-p03', cy.selections.PSDataSpecs.IC79,
+                                            'version-003-p03', cy.selections.PSDataSpecs.ps_2011,
+                                            'version-003-p03', cy.selections.PSDataSpecs.IC86_2012_2014,
+                                            'version-003-p03', cy.selections.PSDataSpecs.IC86v3_2015,
+        )
+        """
+        ana11.save(ana_dir)
+
 
 # Get time windows
 #all_tw_ids = time_window_loader()
@@ -36,7 +64,7 @@ script = ["~/venvs/py3v4/bin/python3", os.path.join(PATHS.repo, "bg_trial_for_jo
 #njobs_tot = njobs_per_tw * ntime_windows
 
 ntrials = 1e6
-max_trials_per_job = 1e4
+max_trials_per_job = 1e3
 njobs = int(np.ceil(ntrials/float(max_trials_per_job)))
 ntrials_per_job = int(ntrials/float(njobs))
 

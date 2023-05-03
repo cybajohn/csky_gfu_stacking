@@ -1,3 +1,7 @@
 __pycache__/
 out*
 test_plots/*
+jobfiles/*
+saved_models_for_test/*
+failsave/*
+filter/*

@@ -7,7 +7,32 @@ import json as _json
 import gzip as _gzip
 import numpy as _np
 
-local = "out_test"
+from _paths import PATHS
+
+def easy_source_list_loader(name = None):
+    """
+    Load source lists from fits, sample independent.
+
+    Parameters
+    ----------
+    None
+    
+    Returns
+    -------
+    sources : list
+        List of sources, each containing a dict of information.
+    """
+    if name is not None:
+        source_file = _os.path.join(PATHS.local, "source_list_from_fits", 
+                                             name)
+    else:
+        source_file = _os.path.join(PATHS.local, "source_list_from_fits",
+                                              "source_list.json")
+    with open(source_file) as _file:
+        sources = _json.load(_file)
+    print("Loaded {} sources".format(len(sources)))
+    return sources
+
 
 def source_list_loader(names=None):
     """
@@ -27,7 +52,7 @@ def source_list_loader(names=None):
         ``names`` was ``None``, returns a list of possible input names. If
         ``names`` was ``'all'`` returns all available sourc lists in the dict.
     """
-    source_file = _os.path.join(local, "source_list", "source_list.json")
+    source_file = _os.path.join(PATHS.local, "source_list", "source_list.json")
     with open(source_file) as _file:
         sources = _json.load(_file)
     source_names = sorted(sources.keys())

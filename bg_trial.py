@@ -3,37 +3,17 @@ this is time-integrated for practice purposes
 """
 import numpy as np
 import matplotlib.pyplot as plt
+from _loader import easy_source_list_loader as src_load
 
-from _loader import source_list_loader 
 import csky as cy
 import histlite as hl
 
 # load sources
 
-names = source_list_loader()
+srcs = src_load()
 
-names = names[1:-1]
-
-src_ra = []
-src_dec = []
-
-for name in names:
-	srcs = source_list_loader(name)
-	srcs_ra = [src["ra"] for src in srcs[name]]
-	srcs_dec = [src["dec"] for src in srcs[name]]
-	src_ra.extend(srcs_ra)
-	src_dec.extend(srcs_dec)
-
-print(srcs_ra)
-print(srcs_dec)
-
-#srcs = source_list_loader(name)
-#print(srcs)
-#srcs_ra = [src["ra"] for src in srcs[name]]
-#print(srcs_ra)
-#srcs_dec = [src["dec"] for src in srcs[name]]
-#print(srcs_dec)
-
+src_ra = [src["ra"] for src in srcs]
+src_dec = [src["dec"] for src in srcs]
 
 
 # convert sources to csky_style
@@ -44,14 +24,10 @@ print(src)
 
 # load bg
 
-#cy.selections.DataSpec._version = 'version-003-p03'
-ana_dir = cy.utils.ensure_dir('/data/user/jkollek/csky_cache/ana/')
 ana11 = cy.get_analysis(cy.selections.repo, 
-					    'version-003-p03', cy.selections.PSDataSpecs.ps_2011,
-					    'version-003-p03', cy.selections.PSDataSpecs.IC86_2012_2014,
-					 dir=ana_dir)
+					    'version-004-p00', cy.selections.PSDataSpecs.my_cleaned_data)
 
-tr = cy.get_trial_runner(src=src, ana=ana11, sindec_bandwidth=np.radians(.1), mp_cpus=20)
+tr = cy.get_trial_runner(src=src, ana=ana11, mp_cpus=20)
 
 
 bg = cy.dists.Chi2TSD(tr.get_many_fits(1000, seed=1))
