@@ -37,6 +37,10 @@ year = 60**2 * 24 * 365
 def mc_weight(mc, live):
     return 1.36*mc['ow']*(live*((mc['trueE']/1e5)**(-2.37))*(10**(-18)))
 
+def mc_weight_2(mc, live):
+    return 1.36*mc['ow']*(live*((10**mc['logE']/1e5)**(-2.37))*(10**(-18)))
+
+
 my_mc_file = os.path.join(PATHS.data, "cleaned_datasets_new", "IC86_2016_MC.npy")
 og_mc_file = os.path.join('/data','ana','analyses','ps_tracks','version-004-p00','IC86_2016_MC.npy') 
 
@@ -124,7 +128,7 @@ ax.yaxis.set_tick_params(labelsize=14)
 
 
 ax = axs[1]
-ax.hist(gold_events['trueE']/1e3,weights=mc_weight(gold_events, livetimes), bins=np.logspace(1,4))
+ax.hist((10**(gold_events['logE']))/1e3,weights=mc_weight(gold_events, livetimes), bins=np.logspace(1,4))
 ax.set_xscale('log')
 ax.set_xlabel(r"Energy in $\mathrm{TeV}$",fontsize=18)
 ax.xaxis.set_tick_params(labelsize=14)
