@@ -28,7 +28,7 @@ file_count = len(npy_files)
 print("Found {} files in {}".format(file_count,version))
 print(npy_files)
 
-outpath = os.path.join(PATHS.data, "cleaned_datasets_new_gcd")
+outpath = os.path.join(PATHS.data, "cleaned_datasets_new")
 if os.path.isdir(outpath):
     print("Output folder '{}' is already ".format(outpath) +
                     "existing")

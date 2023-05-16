@@ -95,7 +95,7 @@ if __name__ == "__main__":
      
     job_name = "ehe_transient_stacking"
     
-    job_dir = os.path.join(PATHS.jobs, "check_gold_mc_ids_new_gcd")
+    job_dir = os.path.join(PATHS.jobs, "check_gold_mc_ids_new")
     #script = os.path.join(PATHS.repo, "check_ehe_mc_ids.py")
     script = ["~/i3/icetray/build/env-shell.sh","python3", os.path.join(PATHS.repo, "check_gold_mc_ids.py")]
 
@@ -121,12 +121,12 @@ if __name__ == "__main__":
         #    },
         "21002": {
             "path": os.path.join(fpath, "sim_21002_alerts"),
-            "gcd": os.path.join(gcd_path, "GeoCalibDetectorStatus_2016.57531_V0_OctSnow.i3.gz"),
+            "gcd": os.path.join(gcd_path, "GeoCalibDetectorStatus_2012.56063_V1.i3.gz"),
             "legacy": True,
             },
         "21220": {
             "path": os.path.join(fpath, "sim_21220_alerts"),
-            "gcd": os.path.join(gcd_path, "GeoCalibDetectorStatus_2016.57531_V0_OctSnow.i3.gz"),
+            "gcd": os.path.join(gcd_path, "GeoCalibDetectorStatus_2012.56063_V1.i3.gz"),
             "legacy": True,
             }
         }
@@ -141,7 +141,7 @@ if __name__ == "__main__":
     # Job splitting args and job output paths
     nfiles_perjob = 100
     # make 3 outpath for checking purposes
-    outpath_1 = os.path.join(PATHS.data, "check_gold_mc_ids_new_gcd")
+    outpath_1 = os.path.join(PATHS.data, "check_gold_mc_ids_new")
     if os.path.isdir(outpath_1):
         print("")
         warnings.warn("Output folder '{}' is already ".format(outpath_1) +

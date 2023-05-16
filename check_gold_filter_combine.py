@@ -16,8 +16,8 @@ import matplotlib.pyplot as plt
 from _paths import PATHS
 
 
-inpath = os.path.join(PATHS.data, "check_gold_mc_ids_new_gcd")
-outpath = os.path.join(PATHS.local, "check_gold_mc_ids_new_gcd")
+inpath = os.path.join(PATHS.data, "check_gold_mc_ids_new")
+outpath = os.path.join(PATHS.local, "check_gold_mc_ids_new")
 
 
 npy_files = list(glob(os.path.join(inpath,'*.*')))
