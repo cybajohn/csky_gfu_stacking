@@ -1,5 +1,5 @@
 """
-This file processes the sim files 21220 and 2 and filters
+This file processes the sim files 21220 and 21002 and filters
 the gfu-gold events from these files out of the 2016 mc file.
 These are then compared in energy and position to 9 years of 
 gfu-gold alerts.
