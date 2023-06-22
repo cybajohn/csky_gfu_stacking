@@ -127,6 +127,8 @@ ana11 = cy.get_analysis(cy.selections.repo,
 t_max = ana11.mjd_max
 t_min = ana11.mjd_min
 
+print("analysis window ",t_min,t_max)
+
 srcs =  _loader.easy_source_list_loader()
 
 # Check if sources are inside the analysis time frame

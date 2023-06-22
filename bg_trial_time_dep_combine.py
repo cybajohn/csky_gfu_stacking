@@ -355,6 +355,30 @@ plt.savefig("test_plots/time_window_ns_bg_time_dep_1.pdf")
 plt.clf()
 
 
+fig, axs = plt.subplots(1, 2, figsize=(13 ,5))
+axs = axs.ravel()
+ax = axs[0]
+dt_bins = 2*np.logspace(-2,2,50)
+ax.hist(all_bg[0].trials["dt"],histtype="step",bins=dt_bins,label=r"bg time window lengths")
+ax.set_yscale('log')
+ax.set_xscale('log')
+ax.grid('on',linestyle='--',alpha=.5)
+plt.suptitle(r"Source Nr. ${}$".format(src_id_all[0]+1))
+ax.set_xlabel(r'dt in $\mathrm{d}$')
+ax.set_ylabel(r'number of trials')
+ax.legend(loc='upper left')
+
+ax = axs[1]
+im = ax.hist2d(all_bg[0].trials["dt"],all_bg[0].trials["ns"],bins=plot_4_bins,norm=LogNorm())
+ax.set_xlabel(r'dt in $\mathrm{d}$')
+ax.set_ylabel(r"$\hat{n}_\mathrm{S}$")
+plt.colorbar(im[-1],label=r"number of trials")
+
+plt.tight_layout()
+plt.savefig("test_plots/9_years_gfu_gold_time_dep_bg_dt_and_dt_ns.pdf")
+plt.clf()
+
+
 """
 n_cols = len(time_windows)
 n_rows = int(n_srcs)
